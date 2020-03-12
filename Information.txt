@@ -1,0 +1,10 @@
+transcompilers/souce to source compiler
+Compilation = syntactic and semantic analysis + Code optimization + Generate Machine Code
+
+Why programs are platform dependent ?
+
+	File Format used are different -
+		Windows Executable File Format - PE (Portable Executable)
+		Linux Executable File Format - ELF (Executable and Linkable File)
+	System calls (eg - File Opening, Directory creation etc.) are different in Windos and Linux
+	Different hardwares have different machine codes.
