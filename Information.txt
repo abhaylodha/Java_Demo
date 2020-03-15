@@ -1,4 +1,15 @@
-transcompilers/souce to source compiler
+JAVA -
+	General-Purpose
+	Platform independent
+	Object-Oriented
+	High performant
+	Multi-threaded
+	Compiled as well as Interpreted 
+		Compiled : Source Code -> Byte Code (compact and optimized code)
+		Interpreted : Byte Code -> Machine Instruction executed
+
+Some compilers are transcompilers, which does souce to source compilation.
+
 Compilation = syntactic and semantic analysis + Code optimization + Generate Machine Code
 
 Why programs are platform dependent ?
@@ -8,3 +19,56 @@ Why programs are platform dependent ?
 		Linux Executable File Format - ELF (Executable and Linkable File)
 	System calls (eg - File Opening, Directory creation etc.) are different in Windos and Linux
 	Different hardwares have different machine codes.
+ 
+JVM Responsibility
+	Loads and interprets code
+	Automatic memory management
+	Security
+
+JIT compilation -
+	Also called as Dynamic Compilation.
+	Most JVMs provide Just in Time compilation for higher performance.
+	JVM identifies frequently executed code, called Hot Spots.
+	JVM converts Hot Spot specific Byte Code to Machine Code.
+	Machine Code is cached.
+	It's not specified in JVM specification.
+
+JVM is implemented by various companies by following JVM specifications.
+	eg. -	Oracle's Hotspot JVM implementeation
+		IBM's JVM
+
+When we execute a program using "java <program>", it -
+	creates a new JVM instance in memory and
+	loads Hello.class in memory and
+	executes it.
+
+
+JAVA Software Family
+	JAVA Standard Edition (For Desktop/Server Applications)
+		Two versions
+			1) JRE (Java Runtime Environment) = JVM + JAVA API (Standard Libraries)
+			2) JDK (Java Development Kit) = Development tools + JRE
+	JAVA Enterprise Edition (For Server Applications)
+	JAVA Micro Edition (For Resource contrained devices)
+
+Public classes should be written in it's own java file.
+	public class HelloWorld1  -> Should be in HelloWorld1.java
+
+
+Who created Java?
+	James Gosling
+Which of the following is correct statement about execution of a Java program?
+	JAVA Program is compiled into Byte Code and Byte Code is executed by JVM.
+An interpreter does not generate machine code like a compiler, but it maintains a library of pre-compiled
+machine code and executes the appropriate machine code corresponding to the statement in the source code. True/False?
+	True
+What is a JIT compiler?
+	It is a JVM component that perform dynamic compilation by converting frequently executed bytecode called "hot spots" into machine code.
+	The compiled machine code is cached and used in future to achieve faster performance.
+To compile and run Java programs, one needs to install ONLY a JRE. True/False?
+	False
+Why are we using public for only one class?
+	Let's  assume we have two public classes Y & Z in a  file named Y.java.  Now, let's assume a different class X is using Z.
+	Now, when we compile  X, the compiler first tries to locate Z.class and if it cannot find it,  then it tries to locate Z.java
+	so that it can compile it automatically.  But, since we only have Y.java, the class Z  cannot be located and hence  we get a
+	compilation error. So, we do need  to place them in separate  files.  
