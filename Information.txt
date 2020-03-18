@@ -72,3 +72,81 @@ Why are we using public for only one class?
 	Now, when we compile  X, the compiler first tries to locate Z.class and if it cannot find it,  then it tries to locate Z.java
 	so that it can compile it automatically.  But, since we only have Y.java, the class Z  cannot be located and hence  we get a
 	compilation error. So, we do need  to place them in separate  files.  
+
+Statically Typed Language
+	Variable can hold data of type which it is declared with. Type cannot be changed later. It is checked while compiling, so it's called as Static Type Checking.
+
+	Good for detecting programming mistakes earlier.
+
+Dynamically Typed Language
+	Javascript is dynamically typed language, because variable can be assigned different types of values.
+
+Literal means raw data.
+	Eg. int a = 5;   // Here - 5 is literal
+	boolean isHappy = true;   //Here - true is literal.
+
+Static Variable = Class Variable. Only one copy for the class. Gets default values.
+Instance Variable = Variables specific to each object and represents object state. Gets default values.
+Local Variables = Within methods. They don't get default values. Must be initialized.
+
+class member variables (Static + Instance) can have default values, but cannot be reinitialized within class body. It can be reinitialized within member methods.
+
+Java Primitives :
+  |
+  |---boolean
+  |
+  |---Number
+       |
+       |---Integer
+       |      |---Byte (8 bits) [Default value = 0]
+       |      |---Short (16 bits) [Default value = 0]
+       |      |---Int (32 bits) [Default value = 0]
+       |      |---Long (64 bits) [Default value = 0]
+       |
+       |---Floating Type
+       |      |---Float  (32 bits)  [Range : -3.4E38 to 3.4E38, Default value = 0.0f]
+       |      |---Double  (64 bits) [Range : -1.7E308 to 1.7E308, Default value = 0.0d]
+       |
+       |---Character
+              |---char  (16 bits, unsigned integer scheme) [Range : 0 to 2^16-1, Default value = '\u0000' (A null character)]
+
+Why different types Integer Data Types ?
+	To avoid memory wastage in resource contained devices. Programmer can choose best possible container as per requirement.
+
+Integer data representation
+	- Signed two's complement to represent data.
+
+Floating data representation
+	- IEEE 754 floating point specification to represent data.
+
+Hexadecimal representation
+	int y = 0x41;  //OR 0X41   It's hexadecimal 4 * 16^1 + 1 = 65.
+
+int y = 0b01000001;     // Introduced in Java 7.   It's binary representation. 1*2^6 + 1 = 65.
+int y = 0101;     //Octal.     1*8^2 + 1 = 65.
+int y = 1_23_456;      //Introduced in Java 7. Used to improve readability.
+int x=5, y=6;          // Two variables in a single statement can be declared and initialized.
+int x,y=6;             // In class - x will be zero. In local scope, it needs to be initialized before using.
+int x=y=99;           // y ifirst reassigned to 99 and then x is declared with value 99.
+
+    class $ClassStartingWithDollarSign {
+	   int x = 20;                   //x is declared as isntance variable.
+	   int y = x = 99;               //x can be re-initialized in this way as it is a declaration statement for y.
+	}
+
+	float f = 23.4f;    //f is required for floats.
+	double d = 37.4d;	//d is optional for double.
+
+Avoid float and double if exact answers are required.
+
+Use Bigecimal for monetary calculations (E-Commerce applications).
+
+Doubles are more precise.
+
+Java uses UTF-16 format to represent all characters.
+
+char c = 65;		//In Unicode 65 maps to 'A'.
+
+char c = '\u0041'   // Unicode is Hexadecimal number. So 4*16^1 + 1 = 65. so maps to 'A'.
+char c = 0x41       // 4*16^1 + 1 = 65. so maps to 'A'.
+char c = 0b01000001       // 2*2^6 + 1 = 65. so maps to 'A'.
