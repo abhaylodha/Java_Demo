@@ -93,7 +93,7 @@ class member variables (Static + Instance) can have default values, but cannot b
 
 Java Primitives :
   |
-  |---boolean
+  |---boolean (bits allocated - JVM specific) [Default value = false]
   |
   |---Number
        |
@@ -150,3 +150,19 @@ char c = 65;		//In Unicode 65 maps to 'A'.
 char c = '\u0041'   // Unicode is Hexadecimal number. So 4*16^1 + 1 = 65. so maps to 'A'.
 char c = 0x41       // 4*16^1 + 1 = 65. so maps to 'A'.
 char c = 0b01000001       // 2*2^6 + 1 = 65. so maps to 'A'.
+
+boolean b;        //Default value - false.
+
+Which of the following statements is correct about the Java programming language?
+	JAVA is statically typed language.
+How many primitive data types are there in Java?
+	8
+How many bits are used to represent an int data type?
+	32
+What is the range of values that a short data type can support?
+	-(2^15) to ((2^15) - 1)
+What character encoding is used by Java to internally store characters?
+	UTF-16
+What data representation does Java  use for storing characters?
+	16 bit unsigned integers
+
